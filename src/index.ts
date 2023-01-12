@@ -27,7 +27,7 @@ const checkRowWinner = (grid: Grid): Player | null => {
 }
 
 // Iterate over the columns and check if there are 4 consecutive cells with the same player.
-const checkColumnWinner = (grid: Grid) => {
+const checkColumnWinner = (grid: Grid): Player | null => {
   for (let columnIndex = 0; columnIndex < COLUMNS_COUNT; columnIndex++) {
     let count = 0
     let lastPlayer: Player | null = null
@@ -51,7 +51,7 @@ const checkColumnWinner = (grid: Grid) => {
 
 // Iterate over every cell and check if there are 4 consecutive cells with the same player in either
 // one of the descending to the left or descending to the right diagonals.
-const checkDiagonalsWinner = (grid: Grid) => {
+const checkDiagonalsWinner = (grid: Grid): Player | null => {
   for (let rowIndex = 0; rowIndex < ROWS_COUNT; rowIndex++) {
     for (let columnIndex = 0; columnIndex < COLUMNS_COUNT; columnIndex++) {
       const player = grid[rowIndex][columnIndex]
